@@ -4,7 +4,7 @@ set -xeuo pipefail
 WORLD_SIZE=1
 PROJECT_NAME="agent_code"
 EXPERIMENT_NAME="codev3.4_bs256_L40S_7B_n8"
-SAVE_CHECKPOINT_DIR="/tmp/instance_storage/xinhaih/exp/verl_checkpoints"
+SAVE_CHECKPOINT_DIR="/tmp/instance_storage/exp/verl_checkpoints"
 
 BASEDIR='/workspace/shared/datasets/CodeV_dataset'
 VISUAL_DATASET_TRAIN_ALL=${BASEDIR}/codev_3.4_with_image_paths.parquet

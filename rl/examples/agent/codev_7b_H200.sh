@@ -4,9 +4,9 @@ set -xeuo pipefail
 WORLD_SIZE=1
 PROJECT_NAME="agent_code"
 EXPERIMENT_NAME="codev3.4_bs256_H200_7B_n8"
-SAVE_CHECKPOINT_DIR="/tmp/instance_storage/xinhaih/exp/verl_checkpoints"
+SAVE_CHECKPOINT_DIR="/tmp/instance_storage/exp/verl_checkpoints"
 
-BASEDIR='/home/greenland-user/xinhaih/datasets/CodeV/'
+BASEDIR='/home/user/datasets/CodeV/'
 VISUAL_DATASET_TRAIN_ALL=${BASEDIR}/codev_3.4_chart3_with_image_paths.parquet
 # Leave empty to skip.
 EVAL_DATASET=${BASEDIR}/codev_3.4_chart3.parquet
@@ -55,7 +55,7 @@ PYTHONUNBUFFERED=1 python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.rollout.agent.concurrent_workers=10 \
     actor_rollout_ref.rollout.agent.custom_stop='["</code>"]' \
     actor_rollout_ref.rollout.agent.show_tqdm=False \
-    actor_rollout_ref.rollout.agent.aux_img_dir="/home/greenland-user/xinhaih/datasets/CodeV_images/" \
+    actor_rollout_ref.rollout.agent.aux_img_dir="/home/user/datasets/CodeV_images/" \
     +actor_rollout_ref.rollout.show_rollout_progress=True \
     trainer.critic_warmup=0 \
     trainer.logger=['console','wandb','rl_logging_board'] \

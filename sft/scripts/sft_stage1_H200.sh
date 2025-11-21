@@ -7,12 +7,12 @@ export OMP_NUM_THREADS=8
 bsz=2
 #501760
 MODEL_PATH="Qwen/Qwen2.5-VL-7B-Instruct/" 
-output_dir="/home/greenland-user/xinhaih/"
-DATASET_1="/home/greenland-user/xinhaih/repo/Thyme/data/cleaned_sft_data/jsonl/wo_thinking_thyme_single_round.jsonl"
-DATASET_2="/home/greenland-user/xinhaih/repo/Thyme/data/cleaned_sft_data/jsonl/2round.jsonl"
+output_dir="."
+DATASET_1="data/jsonl/wo_thinking_thyme_single_round.jsonl"
+DATASET_2="data/jsonl/2round.jsonl"
 
 export WANDB_PROJECT="codev-sft"
-export WANDB_RUN_NAME="thyme_stage1_$(date +%Y%m%d_%H%M%S)"
+export WANDB_RUN_NAME="sft_stage1_$(date +%Y%m%d_%H%M%S)"
 
 FPS_MAX_FRAMES=10 \
 NPROC_PER_NODE=8 \

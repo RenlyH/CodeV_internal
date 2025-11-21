@@ -1,0 +1,37 @@
+# Minimal compatible requirements for RL component (DeepEyes/verl)
+# File: rl/requirements_rl.txt
+# This replaces the bloated requirements_deepeyes.txt with only essential dependencies
+# Compatible with SFT and Eval components
+
+# Core ML frameworks
+transformers>=4.33,<4.53
+datasets>=3.0,<3.4
+peft>=0.11,<0.16
+numpy<2.0
+accelerate>=1.2
+
+# RL-specific
+ray[default]>=2.10
+tensordict<=0.6.2
+torchdata
+
+# Training utilities
+hydra-core
+wandb
+codetiming
+dill
+
+# Data processing
+pandas
+pyarrow>=15.0.0
+
+# Utilities
+pybind11
+pylatexenc
+
+# Optional: Install separately if needed
+# flash-attn>=2.7.0        # Requires CUDA, compile from source
+# liger-kernel             # GPU optimization
+# vllm<=0.8.3              # Inference backend
+# deepspeed                # Distributed training
+# bitsandbytes             # Quantization
